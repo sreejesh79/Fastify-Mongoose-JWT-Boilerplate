@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",               // ✅ Must be ES2017 or later
+    "module": "ESNext",               // ✅ Must be ES2022, ESNext, Node16+, or nodenext
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+  },
+  "include": ["src", "src/types"],
+  "exclude": ["dist", "node_modules"]
+}

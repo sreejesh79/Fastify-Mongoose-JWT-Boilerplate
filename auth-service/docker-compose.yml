@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  fastify-boilerplate:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /src
+          ignore:  node_modules/
+        - action: rebuild
+          path: package.json
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./.keys:/app/.keys:ro
+    environment:
+      - NODE_ENV=prod
