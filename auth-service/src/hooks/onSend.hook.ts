@@ -23,6 +23,7 @@ const onSendHookPlugin: FastifyPluginAsync = async (fastify) => {
       status: reply.statusCode >= 400 ? 'error' : 'success',
       data: data ?? null,
       message: reply.statusCode >= 400 ? 'An error occurred' : 'Request successful',
+      code: reply.statusCode  
     };
 
     return JSON.stringify(unified);

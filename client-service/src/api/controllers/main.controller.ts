@@ -5,6 +5,6 @@ import { FastifyReply, FastifyRequest } from 'fastify';
 export default class MainController {
     @GET('')
     async home(request, reply) {
-        reply.send('Welcome to Fastify Boilerplate');
+        reply.send('Welcome to Fastify Client Boilerplate');
     }
 }
