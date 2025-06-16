@@ -10,4 +10,14 @@ declare module 'fastify' {
   interface FastifyContextConfig {
     skipAuth?: boolean;
   }
+  
+  interface FastifyRequest {
+    otpUser?: any;
+    registerUser?: any;
+    user: any;
+    cookies: {
+      [cookieName: string]: string;
+    }
+  }
+
 }

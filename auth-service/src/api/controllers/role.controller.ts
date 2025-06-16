@@ -8,7 +8,14 @@ export default class RoleCOntroller {
     @Inject(RoleService)
     private _roleService: RoleService;
 
-    @GET('/list')
+    @GET({
+        url: '/list',
+        options: {
+            config: {
+                skipAuth: true
+            }
+        }
+    })
     async list(req: FastifyRequest, res: FastifyReply) {
 
         const roles = await this._roleService.getAllRoles();

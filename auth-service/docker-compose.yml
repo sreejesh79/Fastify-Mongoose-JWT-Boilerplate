@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  fastify-boilerplate:
+  fastify-auth-boilerplate:
     build:
       context: .
       dockerfile: Dockerfile

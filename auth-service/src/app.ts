@@ -2,6 +2,7 @@ import Fastify from 'fastify';
 import cors from '@fastify/cors';
 import helmet from '@fastify/helmet';
 import rateLimit from '@fastify/rate-limit';
+import cookie from '@fastify/cookie';
 import { bootstrap } from 'fastify-decorators';
 import { join } from 'path';
 import envPlugin from './plugins/env.plugin.js';
@@ -34,6 +35,7 @@ await app.register(rateLimit, {
     ban: 2,               // Ban after 2 timeWindow violations
   });
 
+  await app.register(cookie);
   await app.register(envPlugin);
   await app.register(errorHandlerPlugin);
   await app.register(jwtPlugin);
